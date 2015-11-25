@@ -1,2 +1,19 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<h1> ShortURL <h1> </p>
+
+<form action="/url" method="post">
+	Enter URL:
+	<input type ="text" name="original_url">
+	<input type="submit" value="Submit">
+</form>
+
+<!-- <form actions="/url" methods="post">
+	<input type="text" name="long_url">
+	<input type="submit" value="submit">  -->
+
+<% @urls.each_with_index do |url,count| %>
+	<%= count + 1%>
+	<%= url.original_url %> - <a href="<%= url.short_url %>" >>
+	<%= url.short_url %><a> | count: <%= url.counter %> 
+	<br>
+
+<% end %>
